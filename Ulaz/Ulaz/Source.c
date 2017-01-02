@@ -81,7 +81,26 @@ int main()
 				scanf("%d", &input);
 			} while (input < 1 || input >3);
 			if (input == 1)
-				changeLimit("100", 'B');
+			{
+				char limit[10];
+				printf("Unesite novo ogranicenje:");
+				scanf("%s", limit);
+				changeLimit(limit, dion[0]);
+			}
+			if (input == 2)
+			{	
+				char workBool[3];
+				char traficBool[3];
+				printf("Na dionici %s se odvijaju radovi?(da/ne)", dion);
+				scanf("%s", workBool);
+				printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
+				scanf("%s", traficBool);
+				changeCondition(workBool, traficBool, dion[0]);
+			}
+			if (input == 3)
+			{
+				printD();
+			}
 
 
 

@@ -27,6 +27,9 @@
     <ClCompile Include="infoChange.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dionica.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="infoChange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dionica.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
