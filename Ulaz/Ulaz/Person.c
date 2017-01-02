@@ -1,5 +1,5 @@
 #include "Person.h"
-void person(PERSON* p)
+void initPerson(PERSON* p)
 {
 	printf("Unesite ime:");
 	scanf("%s",p->name);

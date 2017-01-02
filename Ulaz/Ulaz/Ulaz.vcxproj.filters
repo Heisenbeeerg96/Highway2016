@@ -30,6 +30,12 @@
     <ClCompile Include="Dionica.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoginCheck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AddWorker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
@@ -45,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dionica.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginCheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddWorker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
