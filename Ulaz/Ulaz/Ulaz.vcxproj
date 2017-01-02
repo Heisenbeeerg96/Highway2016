@@ -111,11 +111,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="infoChange.c" />
+    <ClCompile Include="Person.c" />
     <ClCompile Include="Printing.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="infoChange.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Printing.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\CitySearch\Prices.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

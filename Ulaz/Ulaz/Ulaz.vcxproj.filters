@@ -21,10 +21,28 @@
     <ClCompile Include="Printing.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Person.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="infoChange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="infoChange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\CitySearch\Prices.txt" />
   </ItemGroup>
 </Project>
