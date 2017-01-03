@@ -87,8 +87,25 @@ int main()
 		}
 		if (input == 2) {
 			printf("1.Izlistaj stanja na dionicama!\n");
-			printf("2.Nesto nesto nesto")
+			printf("2.Nesto nesto nesto");
 		}
+	}
+	if (input == 2) {
+		printf("Potvrda se stampa!\n");
+		printing(dion[0]);
+		printf("Preuzmite potvrdu!\n");
+
+	}
+	if (input == 3)
+	{
+		printf("Softver generise SOS signal!\n\nSOS signal uspjesno poslat.\nUkoliko pomoc blagovremeno ne stigne, potrazite najblizi SOS telefon na autoputu.");
+
+	}
+	if (input == 4)
+	{
+		printf("Na pocetku birate jednu od ponudjenih opcija u skladu sa Vasim zahtjevima.Nakon pristupa softveru kao admin ");
+		printf("ili kao operater imate mogucnosti uglavnom manipulisanja podacima i/ili uvid u stanje autoputa. Za vise informacija ");
+		printf("otvorite HELP sekciju prirucnika!\n");
 	}
 	system("pause");
 
