@@ -123,7 +123,7 @@ int main()
 
 
 					}
-					case(2):
+					case(2):											//opcije operatera,dovrsiti
 					{
 						printf("1.Izlistaj stanja na dionicama!\n");
 						printf("2.Nesto nesto nesto");
