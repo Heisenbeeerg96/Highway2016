@@ -4,4 +4,6 @@ IME	    Prezime  JMBG           DATUM RODJ.
 aa          bb       2211122121212  22.11.1122
 Marko       Markovic  1212992131234  12.12.1992
 Emin        Galic    2209996101464  22.9.1996
-Milan       Carakova  1236547893214  12.12.1996
+Milan       Carakovac  2402997160000  24.2.1997
+Nikola      Vidovic  1111996654321  11.11.1996
+AleksandarZrnic  Zrnic    1010996123456  10.10.1996
