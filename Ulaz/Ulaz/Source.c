@@ -133,8 +133,36 @@ int main()
 					printf("Ponovite kasnije!\n");
 					system("pause");
 				}
+				break;
 			}
-			//Meni za vozaca
+		case(2):
+			{
+				system("CLS");
+				printf("******************HIGHWAY2016*******************\n\n\n");
+				printf("Potvrda se stampa!\n");
+				printing(dion[0]);
+				printf("Preuzmite potvrdu!\n");
+				system("pause");
+				break;
+			}
+		case(3):
+			{
+				system("CLS");
+				printf("******************HIGHWAY2016*******************\n\n\n");
+				printf("Softver generise SOS signal!\n\nSOS signal uspjesno poslat.\nUkoliko pomoc blagovremeno ne stigne, potrazite najblizi SOS telefon na autoputu.");
+				system("pause");
+				break;
+			}
+		case(4):
+			{
+				system("CLS");
+				printf("******************HIGHWAY2016*******************\n\n\n");
+				printf("Na pocetku birate jednu od ponudjenih opcija u skladu sa Vasim zahtjevima.Nakon pristupa softveru kao admin ");
+				printf("ili kao operater imate mogucnosti uglavnom manipulisanja podacima i/ili uvid u stanje autoputa. Za vise informacija ");
+				printf("otvorite HELP sekciju prirucnika!\n");
+				system("pause");
+				break;
+			}
 		case(0):
 			break;
 		}
