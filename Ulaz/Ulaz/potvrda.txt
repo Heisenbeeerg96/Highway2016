@@ -1,5 +1,5 @@
 **********HIGHWAY2016************
 
 
-Ulazak na dionici: A
-Potvrda stampana u: Wed Jan  4 09:36:25 2017
+Ulazak na dionici: b
+Potvrda stampana u: Wed Jan  4 12:22:00 2017

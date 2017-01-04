@@ -95,11 +95,15 @@ int main()
 								}
 								else if (input3 == 3)
 								{
+									system("CLS");
+									printf("******************HIGHWAY2016*******************\n\n\n");
 									printD();
 									system("pause");
 								}
 								else if (input3 == 4)
 								{
+									system("CLS");
+									printf("******************HIGHWAY2016*******************\n\n\n");
 									addWorker();
 								}
 								else if (input3 == 5)
@@ -123,6 +127,7 @@ int main()
 					{
 						printf("1.Izlistaj stanja na dionicama!\n");
 						printf("2.Nesto nesto nesto");
+						system("pause");
 					}
 					}
 				}
