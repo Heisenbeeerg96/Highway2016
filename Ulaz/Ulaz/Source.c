@@ -36,110 +36,147 @@ int main()
 		{
 		case(1):
 			{
-				system("CLS");
-				printf("******************HIGHWAY2016*******************\n\n\n");
-				printf("1.Admin\n2.Operater\nIzaberite opciju:");
-				scanf("%d", &input2);
-				int countLogs = 0;
-				do {
-					printf("Unesite korisnicko ime:");
-					scanf("%s", name);
-					printf("Unesite lozinku:");
-					scanf("%s", password);
-					countLogs++;
-				} while (LoginCheck(name, password, input2) == 0 && countLogs < 4);
-				if(countLogs<4)
+				do
 				{
 					system("CLS");
 					printf("******************HIGHWAY2016*******************\n\n\n");
-					printf("USPJESAN LOGIN!\n\n\n");
-					printf("MENI:\n\n\n");
-					switch (input2)
+					printf("1.Admin\n2.Operater\n3.Izlaz\nIzaberite opciju:");
+					scanf("%d", &input2);
+				} while (input2 < 1 || input2>3);
+				int countLogs = 0;
+				if (input2 == 3)break;
+				else
+				{
+					do
 					{
-					case(1):
+						printf("Unesite korisnicko ime:");
+						scanf("%s", name);
+						printf("Unesite lozinku:");
+						scanf("%s", password);
+						countLogs++;
+					} while (LoginCheck(name, password, input2) == 0 && countLogs < 4);
+					if (countLogs < 4)
 					{
-						do
+						system("CLS");
+						printf("******************HIGHWAY2016*******************\n\n\n");
+						switch (input2)
 						{
-							while(1)
+						case(1):
+						{
+							do
 							{
-								system("CLS");
-								printf("******************HIGHWAY2016*******************\n\n\n");
-								printf("1.Promijeni ogranicenja!\n");
-								printf("2.Promijeni stanje na putevima!\n");
-								printf("3.Izlistaj trenutna stanja na dionicama!\n");
-								printf("4.Dodaj novog zaposlenog!\n");
-								printf("5.Izlaz iz programa!\n");
-								printf("6.Odjava!\n");
-								printf("Unesite redni broj opcije:");
-								scanf("%d", &input3);
+								while (1)
+								{
+									system("CLS");
+									printf("******************HIGHWAY2016*******************\n\n\n");
+									printf("MENI:\n\n");
+									printf("1.Promijeni ogranicenja!\n");
+									printf("2.Promijeni stanje na putevima!\n");
+									printf("3.Izlistaj trenutna stanja na dionicama!\n");
+									printf("4.Dodaj novog zaposlenog!\n");
+									printf("5.Izlaz iz programa!\n");
+									printf("6.Odjava!\n");
+									printf("Unesite redni broj opcije:");
+									scanf("%d", &input3);
+									if (input3 == 1)
+									{
+										system("CLS");
+										printf("******************HIGHWAY2016*******************\n\n\n");
+										char limit[10];
+										printf("Unesite novo ogranicenje:");
+										scanf("%s", limit);
+										changeLimit(limit, dion[0]);
+									}
+									else if (input3 == 2)
+									{
+										system("CLS");
+										printf("******************HIGHWAY2016*******************\n\n\n");
+										char workBool[3];
+										char traficBool[3];
+										printf("Na dionici %s se odvijaju radovi?(da/ne)", dion);
+										scanf("%s", workBool);
+										printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
+										scanf("%s", traficBool);
+										changeCondition(workBool, traficBool, dion[0]);
+									}
+									else if (input3 == 3)
+									{
+										system("CLS");
+										printf("******************HIGHWAY2016*******************\n\n\n");
+										printD();
+										system("pause");
+									}
+									else if (input3 == 4)
+									{
+										system("CLS");
+										printf("******************HIGHWAY2016*******************\n\n\n");
+										addWorker();
+									}
+									else if (input3 == 5)
+									{
+										system("pause");
+										return 0;
+									}
+									else if (input3 == 6)
+									{
+										system("pause");
+										break;
+									}
+								}
+							} while (input3 < 1 || input3 >6);
+							break;
+
+
+
+						}
+						case(2):											//opcije operatera,dovrsiti
+						{
+							while (1)
+							{
+								do
+								{
+									system("CLS");
+									printf("******************HIGHWAY2016*******************\n\n\n");
+									printf("MENI:\n\n");
+									printf("1.Izlistaj stanja na dionicama!\n");
+									printf("2.Nesto nesto nesto!\n");
+									printf("3.Odjava!\n");
+									printf("Unesite redni broj opcije: ");
+									scanf("%d", &input3);
+								} while (input3 < 1 || input3 >3);
 								if (input3 == 1)
-								{
-									system("CLS");
-									printf("******************HIGHWAY2016*******************\n\n\n");
-									char limit[10];
-									printf("Unesite novo ogranicenje:");
-									scanf("%s", limit);
-									changeLimit(limit, dion[0]);
-								}
-								else if (input3 == 2)
-								{
-									system("CLS");
-									printf("******************HIGHWAY2016*******************\n\n\n");
-									char workBool[3];
-									char traficBool[3];
-									printf("Na dionici %s se odvijaju radovi?(da/ne)", dion);
-									scanf("%s", workBool);
-									printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
-									scanf("%s", traficBool);
-									changeCondition(workBool, traficBool, dion[0]);
-								}
-								else if (input3 == 3)
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
 									printD();
 									system("pause");
 								}
-								else if (input3 == 4)
+								else if (input3 == 2)
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
-									addWorker();
-								}
-								else if (input3 == 5)
-								{
+									printf("Nesto!");
 									system("pause");
-									return 0;
 								}
-								else if (input3 == 6)
+								else if (input3 == 3)
 								{
 									system("pause");
 									break;
 								}
 							}
-						} while (input3 < 1 || input3 >6);
-						break;
-
-
-
+						}
+						}
 					}
-					case(2):											//opcije operatera,dovrsiti
+					else
 					{
-						printf("1.Izlistaj stanja na dionicama!\n");
-						printf("2.Nesto nesto nesto");
+						system("CLS");
+						printf("******************HIGHWAY2016*******************\n\n\n");
+						printf("Ponovite kasnije!\n");
 						system("pause");
 					}
-					}
+					break;
 				}
-				else
-				{
-					system("CLS");
-					printf("******************HIGHWAY2016*******************\n\n\n");
-					printf("Ponovite kasnije!\n");
-					system("pause");
-				}
-				break;
-			}
+}
 		case(2):
 			{
 				system("CLS");
