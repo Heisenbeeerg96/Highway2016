@@ -8,7 +8,7 @@ int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
 	//izlazu
-	int input = 1, input2, input3 = 1;
+	int input = 1, input2, input3 = 1, SOScount = 0;
 	char d1;
 	char name[10],dion[10];
 	char password[15];
@@ -139,7 +139,7 @@ int main()
 									printf("******************HIGHWAY2016*******************\n\n\n");
 									printf("MENI:\n\n");
 									printf("1.Izlistaj stanja na dionicama!\n");
-									printf("2.Nesto nesto nesto!\n");
+									printf("2.Provjeri da li ima zahtjeva za pomoc!\n");
 									printf("3.Odjava!\n");
 									printf("Unesite redni broj opcije: ");
 									scanf("%d", &input3);
@@ -155,8 +155,17 @@ int main()
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
-									printf("Nesto!");
-									system("pause");
+									if (SOScount == 0)
+									{
+										printf("Nema zahtjeva!\n");
+										system("pause");
+									}
+									else
+									{
+										printf("Pomoc poslata!\n");
+										SOScount--;
+										system("pause");
+									}
 								}
 								else if (input3 == 3)
 								{
@@ -171,7 +180,7 @@ int main()
 					{
 						system("CLS");
 						printf("******************HIGHWAY2016*******************\n\n\n");
-						printf("Ponovite kasnije!\n");
+						printf("Pokusajte ponovo kasnije!\n");
 						system("pause");
 					}
 					break;
@@ -192,6 +201,7 @@ int main()
 				system("CLS");
 				printf("******************HIGHWAY2016*******************\n\n\n");
 				printf("Softver generise SOS signal!\n\nSOS signal uspjesno poslat.\nUkoliko pomoc blagovremeno ne stigne, potrazite najblizi SOS telefon na autoputu.");
+				SOScount++;
 				system("pause");
 				break;
 			}
