@@ -18,5 +18,46 @@
     <ClCompile Include="Source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AddWorker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dionica.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoChange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginCheck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Printing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Printing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AddWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoChange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginCheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dionica.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
