@@ -36,6 +36,9 @@
     <ClCompile Include="AddWorker.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Report.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AddWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

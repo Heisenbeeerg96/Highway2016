@@ -4,11 +4,15 @@
 #include "infoChange.h"
 #include "LoginCheck.h"
 #include "AddWorker.h"
+#include "Report.h"
+
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
 	//izlazu
 	int input = 1, input2, input3 = 1, SOScount = 0;
+	int enteringCount;
+	enteringCount = readReport();
 	char d1;
 	char name[10],dion[10];
 	char password[15];
@@ -114,6 +118,7 @@ int main()
 									}
 									else if (input3 == 5)
 									{
+										fixReport(enteringCount);
 										system("pause");
 										return 0;
 									}
@@ -191,8 +196,9 @@ int main()
 				system("CLS");
 				printf("******************HIGHWAY2016*******************\n\n\n");
 				printf("Potvrda se stampa!\n");
-				printing(dion[0]);
-				printf("Preuzmite potvrdu!\n");
+				enteringCount++;
+				printing(dion[0],enteringCount);
+				printf("Preuzmite potvrdu!\nMolimo vas zapamtite sifru: %05d",enteringCount);
 				system("pause");
 				break;
 			}

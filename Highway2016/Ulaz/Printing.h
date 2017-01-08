@@ -4,6 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 FILE* file;
-void printing(char);
+void printing(char,int);
 
 #endif // !PRINTING_H
