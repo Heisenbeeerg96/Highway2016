@@ -172,6 +172,8 @@ int main()
 							}
 							else if (input3 == 3)
 							{
+								system("CLS");
+								printf("******************HIGHWAY2016*******************\n\n\n");
 								//ovdje bi trebalo koristiti neku f-ju za kreiranje onih izvjestaja
 								printf("Naplaceno!\n");
 								system("pause");

@@ -53,6 +53,8 @@ int main()
 				{
 					do
 					{
+						system("CLS");
+						printf("******************HIGHWAY2016*******************\n\n\n");
 						printf("Unesite korisnicko ime:");
 						scanf("%s", name);
 						printf("Unesite lozinku:");
