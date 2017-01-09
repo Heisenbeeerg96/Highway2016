@@ -36,6 +36,9 @@
     <ClCompile Include="Printing.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PriceCalculation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dionica.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PriceCalculation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

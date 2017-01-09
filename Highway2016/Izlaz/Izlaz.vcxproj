@@ -116,6 +116,7 @@
     <ClCompile Include="InfoChange.c" />
     <ClCompile Include="LoginCheck.c" />
     <ClCompile Include="Person.c" />
+    <ClCompile Include="PriceCalculation.cpp" />
     <ClCompile Include="Printing.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
@@ -126,6 +127,7 @@
     <ClInclude Include="InfoChange.h" />
     <ClInclude Include="LoginCheck.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="PriceCalculation.h" />
     <ClInclude Include="Printing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

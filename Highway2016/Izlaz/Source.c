@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include "Printing.h"
 #include <string.h>
+#include "Printing.h"
 #include "infoChange.h"
 #include "LoginCheck.h"
 #include "AddWorker.h"
+#include "PriceCalculation.h"
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
