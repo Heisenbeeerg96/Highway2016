@@ -36,7 +36,10 @@
     <ClCompile Include="Printing.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PriceCalculation.cpp">
+    <ClCompile Include="PriceCalculation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordFinder.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PriceCalculation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordFinder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

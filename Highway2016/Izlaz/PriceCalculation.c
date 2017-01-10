@@ -30,13 +30,7 @@ void path(int i, int j, GRAF *graf, int t[][MAX])
 	}
 }
 
-void search(GRAF *graf, char *dion1, char *dion2, int *kord1, int *kord2)
-{
-	int visited[MAX] = {};
-	search_dfs(0,graf,dion1,dion2,kord1,kord2,visited);
-}
-
-void search_dfs(int u, GRAF *graf, char *dion1, char *dion2, int *kord1, int *kord2,int visited[MAX])
+void search_dfs(int u, GRAF *graf, char *dion1, char *dion2, int *kord1, int *kord2, int visited[MAX])
 {
 	int v;
 	visited[u] = 1;
@@ -47,13 +41,20 @@ void search_dfs(int u, GRAF *graf, char *dion1, char *dion2, int *kord1, int *ko
 
 	for (v = 0; v < graf->n; v++)
 		if (!visited[v] && graf->ms[u][v])
-			search_dfs(v,graf,dion1,dion2,kord1,kord2,visited);
+			search_dfs(v, graf, dion1, dion2, kord1, kord2, visited);
 }
+
+void search(GRAF *graf, char *dion1, char *dion2, int *kord1, int *kord2)
+{
+	int visited[MAX] = {0};
+	search_dfs(0, graf, dion1, dion2, kord1, kord2, visited);
+}
+
 
 void load(FILE *fp, GRAF *graf)
 {
 	int i, j;
-	char c, name[MAX] = {};
+	char c, name[MAX] = {0};
 	if ((fp = fopen("Prices.txt", "r")) != NULL)
 	{
 		fscanf(fp, "%d", &graf->n);
@@ -89,6 +90,7 @@ void load(FILE *fp, GRAF *graf)
 	else
 		printf("Greska pri otvranju!\n");
 	fclose(fp);
+
 }
 
 void init(GRAF *graf, int t[][MAX], float mat[][MAX])
@@ -116,8 +118,7 @@ void loadWorkOnRoads(FILE *fp, float mat[][MAX], GRAF *graf)
 	else printf("Greska pri otvaranju!\n");
 	fclose(fp);
 }
-
-float finalprice(int pod)
+void finallprice(char *dion1,char *dion2)
 {
 	FILE *fp = NULL;
 	GRAF graf;
@@ -126,15 +127,6 @@ float finalprice(int pod)
 	float roadWork[MAX][MAX];
 	load(fp, &graf);
 	loadWorkOnRoads(fp, roadWork, &graf);
-
-	for (int i = 0; i<graf.n; i++)
-	{
-		for (int j = 0; j<graf.n; j++)
-		{
-			printf("%f", roadWork[i][j]);
-		}
-		printf("\n");
-	}
 
 	for (int i = 0; i<graf.n; i++)
 		for (int j = 0; j<graf.n; j++)
@@ -151,17 +143,8 @@ float finalprice(int pod)
 
 	int kord1, kord2;
 	kord1 = kord2 = -1;
-	char grad1[MAX], grad2[MAX];
-	do
-	{
-		printf("Unesite dva grada:\n");
-		scanf("%s", &grad1);
-		scanf("%s", &grad2);
-		search(&graf, grad1, grad2, &kord1, &kord2);
-	} while (kord1 == -1 || kord2 == -1);
 
+	search(&graf, dion1, dion2, &kord1, &kord2);
 	path(kord1 - 1, kord2 - 1, &graf, t);
-	printf("\nRatojanje izmedju gradova je:\n%f\n", d[kord1 - 1][kord2 - 1]);
-
-	return d[kord1 - 1][kord2 - 1];
+	printf("\nUkupna cjena izmedju dionica iznosi:\n%f\n", d[kord1 - 1][kord2 - 1]);
 }

@@ -5,6 +5,7 @@
 #include "LoginCheck.h"
 #include "AddWorker.h"
 #include "PriceCalculation.h"
+#include "PasswordFinder.h"
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
@@ -13,6 +14,21 @@ int main()
 	char d1;
 	char name[10], dion[10];
 	char password[15];
+	
+	/*
+	char sifra[6];
+	BILL ob;
+	do
+	{
+		printf("Unesite sifru vase potvrde:\n");
+		scanf("%s", sifra);
+		ob = findPassword(sifra);
+
+	} while (ob.year == -1);
+	printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
+	scanf("%s", dion);//unosi se dionica na kojoj izlazi!
+	finallprice(ob.checkpoint,dion); //proracun cjene!
+	*/
 	system("CLS");
 	printf("******************HIGHWAY2016*******************\n\n\n");
 	printf("Unesite ime dionice  na kojoj ce se ovaj softver koristiti(A,B,C,D,E,F):");
@@ -223,6 +239,5 @@ int main()
 		}
 	}
 	system("pause");
-
 
 }
