@@ -11,8 +11,8 @@ C:
 da
 ne
 D:
-120
-da
+60
+ne
 da
 E:
 180

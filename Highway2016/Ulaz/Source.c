@@ -13,7 +13,7 @@ int main()
 	int input = 1, input2, input3 = 1, SOScount = 0;
 	int enteringCount;
 	enteringCount = readReport();
-	char d1;
+	char d1, category[5];
 	char name[10],dion[10];
 	char password[15];
 	system("CLS");
@@ -197,10 +197,16 @@ int main()
 			{
 				system("CLS");
 				printf("******************HIGHWAY2016*******************\n\n\n");
+				printf("Unesite kategoriju vozila:\n");
+				printf("Automobil - A\n");
+				printf("Autobus   - B\n");
+				printf("Kamion    - K\n");
+				printf("Motocikl  - M\n");
+				scanf("%s", category);
 				printf("Potvrda se stampa!\n");
 				enteringCount++;
-				printing(dion[0],enteringCount);
-				printf("Preuzmite potvrdu!\nMolimo vas zapamtite sifru: %05d",enteringCount);
+				printing(dion[0], enteringCount, category[0]);
+				printf("Preuzmite potvrdu!\nMolimo vas zapamtite sifru: %05d\n",enteringCount);
 				system("pause");
 				break;
 			}
