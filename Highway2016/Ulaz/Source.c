@@ -5,12 +5,13 @@
 #include "LoginCheck.h"
 #include "AddWorker.h"
 #include "Report.h"
+#include "AddFirm.h"
 
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
 	//izlazu
-	int input = 1, input2, input3 = 1, SOScount = 0;
+	int input = 1, input2, input3 = 1, SOScount = readSOSReport();
 	int enteringCount;
 	enteringCount = readReport();
 	char d1, category[5];
@@ -101,6 +102,10 @@ int main()
 										char traficBool[3];
 										printf("Na dionici %s se odvijaju radovi?(da/ne)", dion);
 										scanf("%s", workBool);
+										if (!strcmp(workBool, "da"))
+										{
+											add_maintanceWorker(dion[0]);
+										}
 										printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
 										scanf("%s", traficBool);
 										changeCondition(workBool, traficBool, dion[0]);
@@ -121,6 +126,7 @@ int main()
 									else if (input3 == 5)
 									{
 										fixReport(enteringCount);
+										fixSOSReport(SOScount);
 										system("pause");
 										return 0;
 									}

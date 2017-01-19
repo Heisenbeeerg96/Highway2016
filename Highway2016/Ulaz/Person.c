@@ -10,3 +10,11 @@ void initPerson(PERSON* p)
 	printf("Unesite JMBG:");
 	scanf("%s", p->JMBG);
 }
+
+void initWorkPerson(PERSON *w)
+{
+	printf("Unesite ime:");
+	scanf("%s", w->name);
+	printf("Unesite prezime:");
+	scanf("%s", w->surname);
+}

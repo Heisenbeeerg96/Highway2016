@@ -3,3 +3,4 @@
 #include "Date.h"
 typedef struct person { char name[20];char surname[20]; char JMBG[20]; DATE birth; }PERSON;
 void initPerson(PERSON*);
+void initWorkPerson(PERSON*);

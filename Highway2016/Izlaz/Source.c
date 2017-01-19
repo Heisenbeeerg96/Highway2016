@@ -6,11 +6,13 @@
 #include "AddWorker.h"
 #include "PriceCalculation.h"
 #include "PasswordFinder.h"
+#include "Report.h"
+
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
 	//izlazu
-	int input = 1, input2, input3 = 1, SOScount = 0;
+	int input = 1, input2, input3 = 1, SOScount = readSOSReport();
 	char d1;
 	char name[10], dion[10];
 	char password[15];
@@ -133,6 +135,7 @@ int main()
 								}
 								else if (input3 == 5)
 								{
+									fixSOSReport(SOScount);
 									system("pause");
 									return 0;
 								}
@@ -221,6 +224,15 @@ int main()
 			printf("Molimo Vas pokazite svoju potvrdu!\n");
 			//sad mu izracuna i naplati ili nesto slicno,Floyd bi se trebao ovdje koristiti
 			printf("Hvala Vam ste koristili nase usluge!\nSretan put\n");
+			system("pause");
+			break;
+		}
+		case(3):
+		{
+			system("CLS");
+			printf("******************HIGHWAY2016*******************\n\n\n");
+			printf("Sistem generise SOS signal!\n");
+			SOScount++;
 			system("pause");
 			break;
 		}
