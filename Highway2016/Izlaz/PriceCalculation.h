@@ -18,5 +18,5 @@ void search_dfs(int, GRAF *, char *, char *, int *, int *, int[MAX]);
 void load(FILE *, GRAF *); //ucitavanje
 void init(GRAF *, int[][MAX], ROADDATA[][MAX]); //inicializacija matrica prethodnika T
 void loadWorkOnRoads(FILE *, ROADDATA[][MAX], GRAF *); //ucitavanje radova na putu
-int loadVehicleCatPrice(FILE *, char *);
-void finallprice(BILL *, char *);
+int loadVehicleCatPrice(FILE *, char *); //ucitavanje kateogija vozila i njeohve cjene
+void finallprice(BILL *, char *); //proracun finalne cjene

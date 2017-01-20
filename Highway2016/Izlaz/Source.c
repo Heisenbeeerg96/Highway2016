@@ -12,26 +12,31 @@ int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
 	//izlazu
+
 	int input = 1, input2, input3 = 1, SOScount = readSOSReport();
 	char d1;
 	char name[10], dion[10];
 	char password[15];
 	
-	
+	//ovo dio sam koristio za testiranje,ali po ovome mozete vidjet kako funkcionise,nemorate zalazit dublje u kod
+	/*Podatak tipa BILL sluzi da se ucita(nadje) potvrdu vozacu kada dodje na izlaz,OVO TREBA VIDA KORISTIT ZA MUP
+	 jer se ovim prestavlja potvrda,po pravilu izlaz bi se trebao da se realziuje da pita vozaca da unese sifu pa onda
+	 dionicu na kojoj izlazi,ili obrnuto samo sacuvajte te podatke i posaljite u ove funkcije dole!!!*/
 	char sifra[6];
 	BILL ob;
 	do
 	{
 		printf("Unesite sifru vase potvrde:\n");
-		scanf("%s", sifra);
-		ob = findPassword(sifra);
+		scanf("%s", sifra);/*sifra prestavlja sifru potvrde koju dobije korisnik na pocetku*/
+		ob = findPassword(sifra); //trazi sifru u dadoteci potvrda,i kada nadje samo inicilazuje podatak u mainu
 
-	} while (ob.year == -1);
+	} while (ob.year == -1);//ovo koristim ako vozac slucajno unese pogresnu sifru,pa da ima mogucnost opet unosa
 	printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
 	scanf("%s", dion);//unosi se dionica na kojoj izlazi!
 	finallprice(&ob,dion); //proracun cjene!
 
-	printf("Izmjena na radu!\n");
+	printf("Izmjena na radu!\n");/*ovja dio koda sluzi za izmjene na putu,unese se dionice koje su direkno povezane i onda imas mogucnost
+								 promjene brzine,stanja itd...,na ulazi i izlaz stavit mogucnost promjene na putu*/
 	printf("Na kojim dionicama se vrsi izmejna:\n");
 	char dio1[2], dio2[2];
 	scanf("%s %s", dio1, dio2);
