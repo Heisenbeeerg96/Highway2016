@@ -7,7 +7,7 @@
 #include "PriceCalculation.h"
 #include "PasswordFinder.h"
 #include "Report.h"
-
+#include "RoadStatisticsChange.h"
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
@@ -17,7 +17,7 @@ int main()
 	char name[10], dion[10];
 	char password[15];
 	
-	/*
+	
 	char sifra[6];
 	BILL ob;
 	do
@@ -29,8 +29,17 @@ int main()
 	} while (ob.year == -1);
 	printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
 	scanf("%s", dion);//unosi se dionica na kojoj izlazi!
-	finallprice(ob.checkpoint,dion); //proracun cjene!
-	*/
+	finallprice(&ob,dion); //proracun cjene!
+
+	printf("Izmjena na radu!\n");
+	printf("Na kojim dionicama se vrsi izmejna:\n");
+	char dio1[2], dio2[2];
+	scanf("%s %s", dio1, dio2);
+	changeStat(dio1, dio2);
+
+
+
+	/*
 	system("CLS");
 	printf("******************HIGHWAY2016*******************\n\n\n");
 	printf("Unesite ime dionice  na kojoj ce se ovaj softver koristiti(A,B,C,D,E,F):");
@@ -249,7 +258,7 @@ int main()
 		case(0):
 			break;
 		}
-	}
+	}*/
 	system("pause");
 
 }

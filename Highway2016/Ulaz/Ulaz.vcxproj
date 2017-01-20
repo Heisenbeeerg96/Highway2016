@@ -117,9 +117,12 @@
     <ClCompile Include="Dionica.c" />
     <ClCompile Include="infoChange.c" />
     <ClCompile Include="LoginCheck.c" />
+    <ClCompile Include="PasswordFinder.c" />
     <ClCompile Include="Person.c" />
+    <ClCompile Include="PriceCalculation.c" />
     <ClCompile Include="Printing.c" />
     <ClCompile Include="Report.c" />
+    <ClCompile Include="RoadStatisticsChange.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
@@ -127,11 +130,14 @@
     <ClInclude Include="AddWorker.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Dionica.h" />
+    <ClInclude Include="PasswordFinder.h" />
+    <ClInclude Include="PriceCalculation.h" />
     <ClInclude Include="Report.h" />
     <ClInclude Include="infoChange.h" />
     <ClInclude Include="LoginCheck.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Printing.h" />
+    <ClInclude Include="RoadStatisticsChange.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\CitySearch\Prices.txt" />

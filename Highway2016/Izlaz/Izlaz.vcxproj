@@ -120,6 +120,7 @@
     <ClCompile Include="PriceCalculation.c" />
     <ClCompile Include="Printing.c" />
     <ClCompile Include="Report.c" />
+    <ClCompile Include="RoadStatisticsChange.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +134,7 @@
     <ClInclude Include="PriceCalculation.h" />
     <ClInclude Include="Printing.h" />
     <ClInclude Include="Report.h" />
+    <ClInclude Include="RoadStatisticsChange.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

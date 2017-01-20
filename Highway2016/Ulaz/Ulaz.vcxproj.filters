@@ -42,6 +42,15 @@
     <ClCompile Include="AddFirm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RoadStatisticsChange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PriceCalculation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordFinder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Printing.h">
@@ -69,6 +78,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AddFirm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RoadStatisticsChange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PriceCalculation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordFinder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
