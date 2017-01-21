@@ -16,13 +16,12 @@ void changeStat(char *dion1, char *dion2)
 		{
 			printf("Ne postoji direkna veza izmedju te dve dionice,unesite ih opet:\n");
 			scanf("%s %s", dion1, dion2);
-			kord1 = atoi(dion1);
-			kord2 = atoi(dion2);
+			kord1 = *dion1;
+			kord2 = *dion2;
 
 			kord1 -= 65;
 			kord2 -= 65;
-
-		} while (graf.ms[kord1][kord2]!=0);
+		} while (graf.ms[kord1][kord2] == 0);
 	}
 
 	ROADDATA roads[MAX][MAX];

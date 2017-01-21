@@ -16,7 +16,7 @@ BILL findPassword(char *pw) //pw-password
 			fgets(temp, 100, fp);
 			fgets(temp, 100, fp);
 
-			while (fscanf(fp, "%s %s %s %s %s %d %d:%d:%d %d\n", &object.password, &object.checkpoint,&object.vehicleCategory,&object.daychar,
+			while (fscanf(fp,"%s %s %s %s %s %d %d:%d:%d %d\n", &object.password, &object.checkpoint,&object.vehicleCategory,&object.daychar,
 				&object.month, &object.day, &object.hh, &object.min, &object.sek, &object.year) == 10)
 			{
 				if (strcmp(object.password, pw) == 0) //ako postoji sifra vraca se iz funkcije

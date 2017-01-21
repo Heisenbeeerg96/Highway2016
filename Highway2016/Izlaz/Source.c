@@ -8,6 +8,7 @@
 #include "PasswordFinder.h"
 #include "Report.h"
 #include "RoadStatisticsChange.h"
+#include "TicketForSpeedLow.h"
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
@@ -39,9 +40,14 @@ int main()
 								 promjene brzine,stanja itd...,na ulazi i izlaz stavit mogucnost promjene na putu*/
 	printf("Na kojim dionicama se vrsi izmejna:\n");
 	char dio1[2], dio2[2];
-	scanf("%s %s", dio1, dio2);
+	scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
 	changeStat(dio1, dio2);
-
+	/*speedTicket je za pisanje kaznje,mislim slanje potvrde MUPU,kako smo na proslom sastanku pricla MIlan je rekao da se potvrda 
+	 jedino moze sacuvaj kada admin se odjavi,e neka to i sa ovim djelom koda uradi
+	 pod 3,napravio sam da ufunkciji speedticet otvara dadoteku u rezimu ,,a",neka se to promjeni(mislim ako se treba neka se promjenii) da bude u skladu kao 
+	 sa onim dadotekama kako se stapaju na ulazu...u SpeedTicket saljemo potvrdu(to je potvrda o vozacu koji je usao na dionicu,a dion je dionica na kojoj je izasao
+	 pa uklopite to*/
+	speedTicket(&ob, dion);
 
 
 	/*
