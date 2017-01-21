@@ -1,5 +1,5 @@
 #include "Report.h"
-
+//pomocne funkcije za pracenje poziva za pomoc na putu i evidencije izdatih potvrda
 int readReport()
 {
 	int tmp = 0;

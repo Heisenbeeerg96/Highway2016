@@ -132,6 +132,10 @@ int main()
 									scanf("%s", workBool);
 									printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
 									scanf("%s", traficBool);
+									if (!strcmp(workBool, "da"))
+									{
+									add_maintanceWorker(dion[0]);
+									}
 									changeCondition(workBool, traficBool, dion[0]);
 								}
 								else if (input3 == 3)

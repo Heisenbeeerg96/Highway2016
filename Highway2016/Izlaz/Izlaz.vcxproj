@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddFirm.c" />
     <ClCompile Include="AddWorker.c" />
     <ClCompile Include="Dionica.c" />
     <ClCompile Include="InfoChange.c" />
@@ -124,6 +125,7 @@
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddFirm.h" />
     <ClInclude Include="AddWorker.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Dionica.h" />
