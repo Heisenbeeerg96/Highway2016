@@ -51,13 +51,13 @@ int changeStat(char *dion1, char *dion2)
 			printf("\nUnesite novo stanje na putu(promjena stanje radova na putu) izmedju te dve dionice(0.0 ili 1.0):\n");
 			scanf("%f", &decimalData);
 			tem =(int) decimalData;
-			roads[kord1][kord2].factor = decimalData;
+			roads[kord1][kord2].workOnRoad = decimalData;
 		}
 		else if (opcion == 4)
 		{
 			printf("\nUnesite novo stanje na putu(da li je moguc saobracaj izmedju dionica) izmedju te dve dionice(0 ili 1):\n");
 			scanf("%f", &decimalData);
-			roads[kord1][kord2].factor = decimalData;
+			roads[kord1][kord2].availability = decimalData;
 		}
 		else
 		{

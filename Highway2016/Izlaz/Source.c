@@ -163,7 +163,6 @@ int main()
 									{
 										system("CLS");
 										printf("******************HIGHWAY2016*******************\n\n\n");
-										printRoadStat();
 										{
 											printf("Pomoc poslata!\n");
 											SOScount--;
