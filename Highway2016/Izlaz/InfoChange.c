@@ -76,8 +76,8 @@ void printD()
 	printf("\n============================================================\n");
 	printf("INFORMACIJE O  FIRMAMA  ZADUZENIM  ZA  ODRZAVANJE  PUTEVA\n");
 	printf("=============================================================\n");
-	printf("Put Firma        Ime radnika  Prezime radnika Aktivnost firme\n");
-	printf("=== ============ ============ =============== ===============\n");
+	printf("Put Firma        Ime radnika  Prezime radnika \n");
+	printf("=== ============ ============ =============== \n");
 	char pom[2];
 	file = fopen("firma.txt", "r");
 	if (file)
@@ -89,9 +89,7 @@ void printD()
 			printf("%-13s", f.name);
 			printf("%-13s", p.name);
 			printf("%-13s   ", p.surname);
-			if (!strcmp(d.workBool, "da"))
-				printf("Aktivna\n");
-			else printf("Neaktivna\n");
+			
 		}
 	}
 	fclose(file);
