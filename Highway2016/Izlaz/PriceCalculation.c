@@ -169,8 +169,12 @@ void finallprice(BILL *ob,char *dion2)
 
 	int kord1, kord2;
 	kord1 = kord2 = -1;
-
+	FILE* q = fopen("bill.txt", "w");
 	search(&graf, ob->checkpoint, dion2, &kord1, &kord2);
 	path(kord1 - 1, kord2 - 1, &graf, t);
 	printf("\nUkupna cjena izmedju dionica iznosi:\n%f\n\n", d[kord1 - 1][kord2 - 1]*(float)loadVehicleCatPrice(fp,ob->vehicleCategory));
+	fprintf(q, "*****HIGHWAY2016******\n");
+	fprintf(q,"\nUkupna cjena izmedju dionica iznosi:\n%f\n\n", d[kord1 - 1][kord2 - 1] * (float)loadVehicleCatPrice(fp, ob->vehicleCategory));
+	fprintf(q, "Hvala na ukazanom povjerenju i sretan put!!!\n");
+	fclose(q);
 }
