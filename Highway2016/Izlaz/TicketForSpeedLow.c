@@ -10,7 +10,7 @@ void speedTicket(BILL *ob, char *dionica)
 	int  t[MAX][MAX];
 
 	load(fp, &graf); //ucitava graf
-	loadWorkOnRoads(fp, roads, &graf); //uctava radove na putu
+	loadWorkOnRoads(fp, roads, &graf); //uctiava radove na putu
 
 
 	for (int i = 0; i<graf.n; i++)
@@ -53,11 +53,11 @@ void speedTicket(BILL *ob, char *dionica)
 
 	 int dataInSeconds = 0;// pretvaramo vrijeme u sekunde(vrijeme sa ulaza,,kada je vozac usao na put" + brzina*koeficijent!
 	 dataInSeconds = ob->sek + ob->min * 60 + ob->hh * 3600 + (int)speedXfactor;
-	 printf("%d", dataInSeconds);
 	 if (dataInSeconds < (timeinfo->tm_sec + timeinfo->tm_min * 60 + timeinfo->tm_hour * 3600))//ukoliko je manje od izlaznog vremena pise se kazna(szo znaci vozac je isao prebrzo!)
 	 {
 		 if ((fp = fopen("PotvrdeZaMUP.txt", "a"))!=NULL)
 		 {
+			 printf("Kazna je poslata u MUP!\n");
 			 fprintf(fp, "=======================================================================================================\n");
 			 fprintf(fp, "                                              POTVRDE ZA MUP                                           \n");
 			 fprintf(fp, "=======================================================================================================\n");

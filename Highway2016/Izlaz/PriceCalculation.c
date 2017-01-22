@@ -172,5 +172,5 @@ void finallprice(BILL *ob,char *dion2)
 
 	search(&graf, ob->checkpoint, dion2, &kord1, &kord2);
 	path(kord1 - 1, kord2 - 1, &graf, t);
-	printf("\nUkupna cjena izmedju dionica iznosi:\n%f\nA vozilo je kategorije:%s\n", d[kord1 - 1][kord2 - 1]*(float)loadVehicleCatPrice(fp,ob->vehicleCategory),ob->vehicleCategory);
+	printf("\nUkupna cjena izmedju dionica iznosi:\n%f\n\n", d[kord1 - 1][kord2 - 1]*(float)loadVehicleCatPrice(fp,ob->vehicleCategory));
 }

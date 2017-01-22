@@ -18,39 +18,20 @@ int main()
 	char d1;
 	char name[10], dion[10];
 	char password[15];
-	
+	char sifra[6];
 	//ovo dio sam koristio za testiranje,ali po ovome mozete vidjet kako funkcionise,nemorate zalazit dublje u kod
 	/*Podatak tipa BILL sluzi da se ucita(nadje) potvrdu vozacu kada dodje na izlaz,OVO TREBA VIDA KORISTIT ZA MUP
 	 jer se ovim prestavlja potvrda,po pravilu izlaz bi se trebao da se realziuje da pita vozaca da unese sifu pa onda
 	 dionicu na kojoj izlazi,ili obrnuto samo sacuvajte te podatke i posaljite u ove funkcije dole!!!*/
-	char sifra[6];
-	BILL ob;
-	do
-	{
-		printf("Unesite sifru vase potvrde:\n");
-		scanf("%s", sifra);/*sifra prestavlja sifru potvrde koju dobije korisnik na pocetku*/
-		ob = findPassword(sifra); //trazi sifru u dadoteci potvrda,i kada nadje samo inicilazuje podatak u mainu
-
-	} while (ob.year == -1);//ovo koristim ako vozac slucajno unese pogresnu sifru,pa da ima mogucnost opet unosa
-	printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
-	scanf("%s", dion);//unosi se dionica na kojoj izlazi!
-	finallprice(&ob,dion); //proracun cjene!
-
-	printf("Izmjena na radu!\n");/*ovja dio koda sluzi za izmjene na putu,unese se dionice koje su direkno povezane i onda imas mogucnost
-								 promjene brzine,stanja itd...,na ulazi i izlaz stavit mogucnost promjene na putu*/
-	printf("Na kojim dionicama se vrsi izmejna:\n");
-	char dio1[2], dio2[2];
-	scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
-	changeStat(dio1, dio2);
 	/*speedTicket je za pisanje kaznje,mislim slanje potvrde MUPU,kako smo na proslom sastanku pricla MIlan je rekao da se potvrda 
 	 jedino moze sacuvaj kada admin se odjavi,e neka to i sa ovim djelom koda uradi
 	 pod 3,napravio sam da ufunkciji speedticet otvara dadoteku u rezimu ,,a",neka se to promjeni(mislim ako se treba neka se promjenii) da bude u skladu kao 
 	 sa onim dadotekama kako se stapaju na ulazu...u SpeedTicket saljemo potvrdu(to je potvrda o vozacu koji je usao na dionicu,a dion je dionica na kojoj je izasao
 	 pa uklopite to*/
-	speedTicket(&ob, dion);
+	//speedTicket(&ob, dion);
 
-
-	/*
+	
+	
 	system("CLS");
 	printf("******************HIGHWAY2016*******************\n\n\n");
 	printf("Unesite ime dionice  na kojoj ce se ovaj softver koristiti(A,B,C,D,E,F):");
@@ -132,17 +113,12 @@ int main()
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
-									char workBool[3];
-									char traficBool[3];
-									printf("Na dionici %s se odvijaju radovi?(da/ne)", dion);
-									scanf("%s", workBool);
-									printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
-									scanf("%s", traficBool);
-									if (!strcmp(workBool, "da"))
-									{
-									add_maintanceWorker(dion[0]);
-									}
-									changeCondition(workBool, traficBool, dion[0]);
+									printf("Izmjena na radu!\n");/*ovaj dio koda sluzi za izmjene na putu,unese se dionice koje su direkno povezane i onda imas mogucnost
+																 promjene brzine,stanja itd...,na ulazi i izlaz stavit mogucnost promjene na putu*/
+									printf("Na kojim dionicama se vrsi izmjena:\n");
+									char dio1[2], dio2[2];
+									scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
+									changeStat(dio1, dio2);
 								}
 								else if (input3 == 3)
 								{
@@ -246,7 +222,18 @@ int main()
 			system("CLS");
 			printf("******************HIGHWAY2016*******************\n\n\n");
 			printf("Molimo Vas pokazite svoju potvrdu!\n");
-			//sad mu izracuna i naplati ili nesto slicno,Floyd bi se trebao ovdje koristiti
+			char sifra[6];
+			BILL ob;
+			do
+			{
+				printf("Unesite sifru vase potvrde:\n");
+				scanf("%s", sifra);//sifra prestavlja sifru potvrde koju dobije korisnik na pocetku
+				ob = findPassword(sifra); //trazi sifru u dadoteci potvrda,i kada nadje samo inicilazuje podatak u mainu
+
+			}while (ob.year == -1);//ovo koristim ako vozac slucajno unese pogresnu sifru,pa da ima mogucnost opet unosa
+			printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
+			finallprice(&ob, dion); //proracun cjene!
+			speedTicket(&ob, dion);
 			printf("Hvala Vam ste koristili nase usluge!\nSretan put\n");
 			system("pause");
 			break;
@@ -273,7 +260,7 @@ int main()
 		case(0):
 			break;
 		}
-	}*/
+	}
 	system("pause");
 
 }
