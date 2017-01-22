@@ -46,9 +46,8 @@ int main()
 			system("CLS");
 			printf("******************HIGHWAY2016*******************\n\n\n");
 			printf("1.Ja sam zaposleni!\n");
-			printf("2.Ja sam vozac!\n");
-			printf("3.Pozovi pomoc na autoput!\n");
-			printf("4.Pomoc pri koristenju programa!\n");
+			printf("2.Pozovi pomoc na autoput!\n");
+			printf("3.Pomoc pri koristenju programa!\n");
 			printf("\n\nUnesite redni broj opcije:");
 			scanf("%d", &input);
 		} while (input > 4 || input < 1);
@@ -92,7 +91,6 @@ int main()
 								system("CLS");
 								printf("******************HIGHWAY2016*******************\n\n\n");
 								printf("MENI:\n\n");
-								printf("1.Promijeni ogranicenja!\n");
 								printf("2.Promijeni stanje na putevima!\n");
 								printf("3.Izlistaj trenutna stanja na dionicama!\n");
 								printf("4.Dodaj novog zaposlenog!\n");
@@ -100,22 +98,13 @@ int main()
 								printf("6.Odjava!\n");
 								printf("Unesite redni broj opcije:");
 								scanf("%d", &input3);
-								if (input3 == 1)
-								{
-									system("CLS");
-									printf("******************HIGHWAY2016*******************\n\n\n");
-									char limit[10];
-									printf("Unesite novo ogranicenje:");
-									scanf("%s", limit);
-									changeLimit(limit, dion[0]);
-								}
-								else if (input3 == 2)
+								 if (input3 == 2)
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
 									printf("Izmjena na radu!\n");/*ovaj dio koda sluzi za izmjene na putu,unese se dionice koje su direkno povezane i onda imas mogucnost
 																 promjene brzine,stanja itd...,na ulazi i izlaz stavit mogucnost promjene na putu*/
-									printf("Na kojim dionicama se vrsi izmjena:\n");
+									printf("Na kojoj putanji se vrsi izmjena(putanja oznacava dvije dionice):\n");
 									char dio1[2], dio2[2];
 									scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
 									changeStat(dio1, dio2);
@@ -124,7 +113,7 @@ int main()
 								{
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
-									printD();
+									printRoadStat();
 									system("pause");
 								}
 								else if (input3 == 4)
@@ -151,7 +140,7 @@ int main()
 
 
 					}
-					case(2):											//opcije operatera,dovrsiti
+					case(2):											
 					{
 						while (1)
 						{
@@ -171,19 +160,7 @@ int main()
 							{
 								system("CLS");
 								printf("******************HIGHWAY2016*******************\n\n\n");
-								printD();
-								system("pause");
-							}
-							else if (input3 == 2)
-							{
-								system("CLS");
-								printf("******************HIGHWAY2016*******************\n\n\n");
-								if (SOScount == 0)
-								{
-									printf("Nema zahtjeva!\n");
-									system("pause");
-								}
-								else
+								printRoadStat();
 								{
 									printf("Pomoc poslata!\n");
 									SOScount--;
@@ -194,8 +171,19 @@ int main()
 							{
 								system("CLS");
 								printf("******************HIGHWAY2016*******************\n\n\n");
-								//ovdje bi trebalo koristiti neku f-ju za kreiranje onih izvjestaja
-								printf("Naplaceno!\n");
+								char sifra[6];
+								BILL ob;
+								do
+								{
+									printf("Unesite sifru vozaceve potvrde:\n");
+									scanf("%s", sifra);//sifra prestavlja sifru potvrde koju dobije korisnik na pocetku
+									ob = findPassword(sifra); //trazi sifru u dadoteci potvrda,i kada nadje samo inicilazuje podatak u mainu
+
+								} while (ob.year == -1);//ovo koristim ako vozac slucajno unese pogresnu sifru,pa da ima mogucnost opet unosa
+								printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
+								finallprice(&ob, dion); //proracun cjene!
+								speedTicket(&ob, dion);
+								printf("Hvala Vam ste koristili nase usluge!\nSretan put\n");//ispis na displeju sa vanjske strane kucice
 								system("pause");
 							}
 							else if (input3 == 4)
@@ -217,28 +205,8 @@ int main()
 				break;
 			}
 		}
+		
 		case(2):
-		{
-			system("CLS");
-			printf("******************HIGHWAY2016*******************\n\n\n");
-			printf("Molimo Vas pokazite svoju potvrdu!\n");
-			char sifra[6];
-			BILL ob;
-			do
-			{
-				printf("Unesite sifru vase potvrde:\n");
-				scanf("%s", sifra);//sifra prestavlja sifru potvrde koju dobije korisnik na pocetku
-				ob = findPassword(sifra); //trazi sifru u dadoteci potvrda,i kada nadje samo inicilazuje podatak u mainu
-
-			}while (ob.year == -1);//ovo koristim ako vozac slucajno unese pogresnu sifru,pa da ima mogucnost opet unosa
-			printf("Sifra je pronadjenja:%s\n", ob.password); //pronalaz potvrde!
-			finallprice(&ob, dion); //proracun cjene!
-			speedTicket(&ob, dion);
-			printf("Hvala Vam ste koristili nase usluge!\nSretan put\n");
-			system("pause");
-			break;
-		}
-		case(3):
 		{
 			system("CLS");
 			printf("******************HIGHWAY2016*******************\n\n\n");
@@ -247,7 +215,7 @@ int main()
 			system("pause");
 			break;
 		}
-		case(4):
+		case(3):
 		{
 			system("CLS");
 			printf("******************HIGHWAY2016*******************\n\n\n");

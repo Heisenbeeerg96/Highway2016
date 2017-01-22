@@ -87,3 +87,14 @@ void changeStat(char *dion1, char *dion2)
 	fclose(fp);
 
 }
+void printRoadStat()
+{	
+	printf("Slijedi matrica puta:\nNAPOMENA:Elementi matrice oznacavaju putanje, tako da je prvi element putanja A->A,drugi A->B ...\nRedoslijed osobina su sljedece(Napomena:1-da,0-ne):\n");
+	FILE* f = fopen("WorkOnRoads.txt", "r");
+	char s[250];
+	if (f)
+	{
+		while(fgets(s, 100, f)!=NULL)
+		printf("%s", s);
+	}
+}
