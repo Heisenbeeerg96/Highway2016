@@ -7,3 +7,4 @@
 #include "PriceCalculation.h"
 
 void changeStat(char *, char *);
+void printRoadStat();

@@ -74,21 +74,6 @@ void printD()
 	DIONICA d;
 	PERSON p;
 	FIRM f;
-	printf("\n\n********INFORMACIJE O DIONICAMA:********\n\n");
-	printf("Ime      Ogranicenje Radovi        Saobracanje\n");
-	printf("======== =========== ============= ================\n");
-	if (file)
-	{
-		while (fscanf(file, "%s\n%s\n%s\n%s\n", d.name, d.limit,d.workBool, d.traficBool) != EOF)
-		{
-			printf("%-9s", d.name);
-			printf("%-12s", d.limit);
-			printf("%-12s", d.workBool);
-			printf("%-17s\n", d.traficBool);
-
-		}
-		printf("\n======== ============= ================\n");
-	}
 	printf("\n============================================================\n");
 	printf("INFORMACIJE O  FIRMAMA  ZADUZENIM  ZA  ODRZAVANJE  PUTEVA\n");
 	printf("=============================================================\n");

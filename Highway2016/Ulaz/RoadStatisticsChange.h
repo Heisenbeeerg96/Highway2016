@@ -6,4 +6,5 @@
 #include <string.h>
 #include "PriceCalculation.h"
 
-void changeStat(char *, char *); //Omogucava izmjenu stanja na putevima
+void changeStat(char *, char *);
+void printRoadStat();

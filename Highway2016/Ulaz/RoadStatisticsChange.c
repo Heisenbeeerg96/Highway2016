@@ -8,23 +8,20 @@ void changeStat(char *dion1, char *dion2)
 
 	int kord1 = *dion1; //prebacujemo string u int
 	int kord2 = *dion2;
-	printf("%s %s %d %d", dion1, dion2, kord1, kord2);
 	kord1 -= 65; //time dobijam dionice kao i/j(dimenzije matrice)
 	kord2 -= 65;
-	printf("%s %s %d %d", dion1, dion2, kord1, kord2);
 	if (graf.ms[kord1][kord2] == 0)
 	{
 		do
 		{
 			printf("Ne postoji direkna veza izmedju te dve dionice,unesite ih opet:\n");
 			scanf("%s %s", dion1, dion2);
-			kord1 = atoi(dion1);
-			kord2 = atoi(dion2);
+			kord1 = *dion1;
+			kord2 = *dion2;
 
 			kord1 -= 65;
 			kord2 -= 65;
-
-		} while (graf.ms[kord1][kord2]!=0);
+		} while (graf.ms[kord1][kord2] == 0);
 	}
 
 	ROADDATA roads[MAX][MAX];
@@ -87,5 +84,17 @@ void changeStat(char *dion1, char *dion2)
 	{
 		printf("Greska pri upisu u dadoteku Radovima na putu!\n");
 	}
+	fclose(fp);
 
+}
+void printRoadStat()
+{	
+	printf("Slijedi matrica puta:\nNAPOMENA:Elementi matrice oznacavaju putanje, tako da je prvi element putanja A->A,drugi A->B ...\nRedoslijed osobina su sljedece(Napomena:1-da,0-ne):\n");
+	FILE* f = fopen("WorkOnRoads.txt", "r");
+	char s[250];
+	if (f)
+	{
+		while(fgets(s, 100, f)!=NULL)
+		printf("%s", s);
+	}
 }

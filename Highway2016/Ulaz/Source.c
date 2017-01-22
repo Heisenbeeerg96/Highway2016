@@ -6,6 +6,7 @@
 #include "AddWorker.h"
 #include "Report.h"
 #include "AddFirm.h"
+#include "RoadStatisticsChange.h"
 
 int main()
 {
@@ -77,7 +78,6 @@ int main()
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
 									printf("MENI:\n\n");
-									printf("1.Promijeni ogranicenja!\n");
 									printf("2.Promijeni stanje na putevima!\n");
 									printf("3.Izlistaj trenutna stanja na dionicama!\n");
 									printf("4.Dodaj novog zaposlenog!\n");
@@ -85,16 +85,7 @@ int main()
 									printf("6.Odjava!\n");
 									printf("Unesite redni broj opcije:");
 									scanf("%d", &input3);
-									if (input3 == 1)
-									{
-										system("CLS");
-										printf("******************HIGHWAY2016*******************\n\n\n");
-										char limit[10];
-										printf("Unesite novo ogranicenje:");
-										scanf("%s", limit);
-										changeLimit(limit, dion[0]);
-									}
-									else if (input3 == 2)
+									 if (input3 == 2)
 									{
 										system("CLS");
 										printf("******************HIGHWAY2016*******************\n\n\n");
@@ -106,15 +97,18 @@ int main()
 										{
 											add_maintanceWorker(dion[0]);
 										}
-										printf("Na dionici %s je moguce nastaviti odvijanje saobracaja?(da/ne)", dion);
-										scanf("%s", traficBool);
-										changeCondition(workBool, traficBool, dion[0]);
+										printf("Na kojoj putanji se vrsi izmjena(putanja oznacava dvije dionice):\n");
+										char dio1[2], dio2[2];
+										scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
+										changeStat(dio1, dio2);
 									}
 									else if (input3 == 3)
 									{
 										system("CLS");
 										printf("******************HIGHWAY2016*******************\n\n\n");
 										printD();
+										printf("\n");
+										printRoadStat();
 										system("pause");
 									}
 									else if (input3 == 4)
@@ -162,6 +156,8 @@ int main()
 									system("CLS");
 									printf("******************HIGHWAY2016*******************\n\n\n");
 									printD();
+									printf("\n");
+									printRoadStat();
 									system("pause");
 								}
 								else if (input3 == 2)
