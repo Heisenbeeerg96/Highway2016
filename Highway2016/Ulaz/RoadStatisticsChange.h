@@ -6,5 +6,5 @@
 #include <string.h>
 #include "PriceCalculation.h"
 
-void changeStat(char *, char *);
+int changeStat(char *, char *);
 void printRoadStat();

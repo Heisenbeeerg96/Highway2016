@@ -94,7 +94,11 @@ int main()
 											printf("Na kojoj putanji se vrsi izmjena(putanja oznacava dvije dionice):\n");
 											char dio1[2], dio2[2];
 											scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
-											changeStat(dio1, dio2);
+											int gg = 0;
+											
+											gg=changeStat(dio1, dio2);
+											if (gg==1)
+												add_maintanceWorker(dio1[0], dio2[0]);//dodaje se naziv firme
 										}
 										else if (strcmp(logInput, "2") == 0)
 										{

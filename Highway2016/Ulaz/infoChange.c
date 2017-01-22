@@ -77,16 +77,16 @@ void printD()
 	printf("\n============================================================\n");
 	printf("INFORMACIJE O  FIRMAMA  ZADUZENIM  ZA  ODRZAVANJE  PUTEVA\n");
 	printf("=============================================================\n");
-	printf("Dio Firma        Ime radnika  Prezime radnika Aktivnost firme\n");
+	printf("Put Firma        Ime radnika  Prezime radnika Aktivnost firme\n");
 	printf("=== ============ ============ =============== ===============\n");
-	char pom[1];
+	char pom[2];
 	file = fopen("firma.txt", "r");
 	if (file)
 	{
-	while ((pom[0] = fgetc(file)) && (fscanf(file,"\n%s\n%s\n%s\n",f.name, p.name, p.surname) != EOF))
+	while ((pom[0] = fgetc(file))&& (pom[1] = fgetc(file)) && (fscanf(file,"\n%s\n%s\n%s\n",f.name, p.name, p.surname) != EOF))
 	{
 
-	printf("%c   ", pom[0]);
+	printf("%c%c   ", pom[0],pom[1]);
 	printf("%-13s", f.name);
 	printf("%-13s", p.name);
 	printf("%-13s   ", p.surname);

@@ -9,6 +9,7 @@
 #include "Report.h"
 #include "RoadStatisticsChange.h"
 #include "TicketForSpeedLow.h"
+#include "AddFirm.h"
 int main()
 {
 	//ideja je da program funkcionise na racunaru za kojim operise covjek, a nalazi se u kucici, tako da, imacemo kucicu na ulazu i 
@@ -96,13 +97,17 @@ int main()
 											printf("Na kojoj putanji se vrsi izmjena(putanja oznacava dvije dionice):\n");
 											char dio1[2], dio2[2];
 											scanf("%s %s", dio1, dio2);//trazi da uneses dvije dionice da pormenis njhova stanja!!
-											changeStat(dio1, dio2);
+											int gg=changeStat(dio1, dio2);
+											if (gg == 1)
+												add_maintanceWorker(dio1[0], dio2[0]);
+
 										}
 										else if (strcmp(logInput, "2") == 0)
 										{
 											system("CLS");
 											printf("******************HIGHWAY2016*******************\n\n\n");
 											printRoadStat();
+											printD();
 											system("pause");
 										}
 										else if (strcmp(logInput, "3") == 0)

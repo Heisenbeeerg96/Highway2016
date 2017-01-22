@@ -4,4 +4,4 @@
 #include<string.h>
 
 typedef struct firm { char name[20]; int num_work; }FIRM;
-void add_maintanceWorker(char);              //dodavanje nove firme i zaposlenih na dionici
+void add_maintanceWorker(char,char);              //dodavanje nove firme i zaposlenih na dionici

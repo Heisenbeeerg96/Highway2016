@@ -1,6 +1,6 @@
 #include "RoadStatisticsChange.h"
 
-void changeStat(char *dion1, char *dion2)
+int changeStat(char *dion1, char *dion2)
 {
 	FILE *fp=NULL;
 	GRAF graf;
@@ -26,11 +26,12 @@ void changeStat(char *dion1, char *dion2)
 
 	ROADDATA roads[MAX][MAX];
 	loadWorkOnRoads(fp, roads, &graf);
-
+	int tem=0;
 	int opcion,data;
 	float decimalData;
 	printf("Sta zelite da promjenite na auto putu:\n1.Brzinu\n2.Koeficijent\n3.Radov na putu\n4.Mogucnost koristenja puta\n5.Exit\n");
 	scanf("%d", &opcion);
+	
 	while (opcion != 5)
 	{
 		if (opcion == 1)
@@ -47,8 +48,9 @@ void changeStat(char *dion1, char *dion2)
 		}
 		else if (opcion == 3)
 		{
-			printf("\nUnesite novo stanje na putu(promjena stanje radova na putu) izmedju te dve dionice(0 ili 1):\n");
+			printf("\nUnesite novo stanje na putu(promjena stanje radova na putu) izmedju te dve dionice(0.0 ili 1.0):\n");
 			scanf("%f", &decimalData);
+			tem =(int) decimalData;
 			roads[kord1][kord2].factor = decimalData;
 		}
 		else if (opcion == 4)
@@ -85,6 +87,7 @@ void changeStat(char *dion1, char *dion2)
 		printf("Greska pri upisu u dadoteku Radovima na putu!\n");
 	}
 	fclose(fp);
+	return tem;
 
 }
 void printRoadStat()

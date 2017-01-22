@@ -1,6 +1,6 @@
 #include "AddFirm.h"
 
-void add_maintanceWorker(char d)
+void add_maintanceWorker(char d,char b)
 {
 	FILE* file;
 	PERSON w;
@@ -23,6 +23,7 @@ void add_maintanceWorker(char d)
 		{
 			initWorkPerson(&w);
 			fputc(d, file);
+			fputc(b, file);
 			fprintf(file, "\n%-15s\n%-15s\n%-23s\n", f.name, w.name, w.surname);
 		}
 	}
